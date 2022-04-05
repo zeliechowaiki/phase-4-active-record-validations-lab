@@ -8,7 +8,7 @@ class Post < ApplicationRecord
   # private
 
   def clickbait
-    unless title.include? "Won't Believe"
+    unless !title.nil? && ((title.include? "Won't Believe") || (title.include? "Secret") || (title.include? "Top [number]") || (title.include? "Guess"))
       errors.add(:title, "Title must be sufficiantly clickbait-y")
     end
   end
